@@ -1,0 +1,65 @@
+{
+    "name": "phattarachai/laravel-sso",
+    "description": "Drop-in \"Sign in with Google\" for single-owner Laravel apps: an email allowlist, one owner account, a remember-forever session, and a local-only login for *.test — with a swappable Socialite driver for a self-hosted IdP later.",
+    "keywords": [
+        "laravel",
+        "sso",
+        "socialite",
+        "google",
+        "login",
+        "oauth",
+        "allowlist"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Phattarachai",
+            "email": "pc@phattarachai.dev"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "illuminate/auth": "^12.0|^13.0",
+        "illuminate/console": "^12.0|^13.0",
+        "illuminate/http": "^12.0|^13.0",
+        "illuminate/support": "^12.0|^13.0",
+        "laravel/socialite": "^5.28",
+        "spatie/laravel-package-tools": "^1.16"
+    },
+    "require-dev": {
+        "larastan/larastan": "^3.10",
+        "laravel/pint": "^1.24",
+        "orchestra/testbench": "^10.8|^11.0",
+        "pestphp/pest": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Phattarachai\\Sso\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Phattarachai\\Sso\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Phattarachai\\Sso\\SsoServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "analyse": "vendor/bin/phpstan analyse",
+        "format": "vendor/bin/pint"
+    }
+}
