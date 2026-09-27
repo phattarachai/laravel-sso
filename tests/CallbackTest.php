@@ -7,7 +7,7 @@ use Phattarachai\Sso\Exceptions\OwnerNotFound;
 
 function googleAccount(string $email, bool $verified = true): SocialiteUser
 {
-    return new SocialiteUser()->setRaw(['email_verified' => $verified])->map(['email' => $email]);
+    return (new SocialiteUser)->setRaw(['email_verified' => $verified])->map(['email' => $email]);
 }
 
 it('logs an allowed account in as the owner with a remember cookie', function (): void {
